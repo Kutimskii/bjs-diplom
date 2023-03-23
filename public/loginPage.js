@@ -6,7 +6,8 @@ userForm.loginFormCallback  = (data) => {
     location.reload();
     return
    } else {
-    throw "Ошибка!Отсутствуют введеные логин и пароль"
+      console.log(response.error);
+      userForm.setLoginErrorMessage(response.error);
    }
   })
 }
@@ -16,7 +17,8 @@ userForm.registerFormCallback = (data) => {
      location.reload();
      return
     } else {
-     throw "Ошибка!Не удалось зарегестрировать пользователя"
+      console.log(response.error);
+      userForm.setLoginErrorMessage(response.error);
     }
    })
 }
