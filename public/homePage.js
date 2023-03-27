@@ -87,7 +87,7 @@ favoritesWidget.addUserCallback = (data) => {
   ApiConnector.addUserToFavorites(data, response => {
     if (response.success) {
       favoritesWidget.clearTable();
-      favoritesWidget.fillTable(data);
+      favoritesWidget.fillTable(response.data);
       moneyManager.updateUsersList(response.data);
       let message = "Пользователь добавлен";
       favoritesWidget.setMessage(response.success,message);
